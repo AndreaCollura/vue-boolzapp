@@ -33,10 +33,6 @@ La struttura dell’array dei contatti potrebbe avere questa forma:
 
 
 
-
-
-
-
 const {createApp} = Vue;
 
 createApp({
@@ -46,7 +42,7 @@ createApp({
                 {
                     id:1,
                     name: 'Michele',
-                    avatar: './img/avatar_1.png',
+                    avatar: '/img/avatar_1.png',
                     visible: true,
                     messages: [
                         {
@@ -216,42 +212,9 @@ createApp({
         }
     },
     methods:{
-        
+
     }
 }).mount('#app');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

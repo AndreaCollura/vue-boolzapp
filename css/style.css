@@ -1,5 +1,10 @@
 :root{
-    
+    --green-bg: #009688;
+    --grey-bg: #dadbd3;
+    --chatframe-bg: #f3eeea;
+    --deskalert: #8edafc;
+
+
 }
 
 
@@ -7,3 +12,267 @@
     border: 1px solid red;
 }
 
+
+
+body {
+    background:url(../img/bgy.png) no-repeat fixed center;
+    background-size: cover;
+}
+
+
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+}
+
+.box-chat {
+    position: relative;
+    overflow: hidden;
+    top: 10px;
+    height: 95%;
+    margin: auto;
+    padding: 0;
+    
+    
+}
+
+
+.left {
+    padding: 0;
+    margin: 0;
+    width: 35%;
+    
+    background-color: white;
+    
+}
+
+.left-content {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    display: block;
+    top: 0;
+}
+
+
+
+
+.user-nav {
+    padding: 10px 16px 10px 15px;
+    
+    height: 60px;
+    width: 100%;
+    z-index: 1000;
+}
+
+
+
+
+
+
+.user-icon{
+    margin-right: 0;
+}
+
+
+.user-avatar {
+    padding: 0;
+    cursor: pointer;
+}
+
+.searchBox {
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 60px;
+    width: 100%;
+}
+
+.searchBox-inner {
+    
+    width: 100%;
+    padding: 10px !important;
+    background-color: var(--chatframe-bg);
+}
+
+
+.desktop-alert{
+    background-color: var(--deskalert);
+}
+
+
+
+.frame-bg{
+
+    background-color: var(--chatframe-bg);
+}
+
+.user-icon img {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+
+.alert-icon{
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin-top: 5px;
+    color: var(--deskalert);
+}
+
+
+.chatboard {
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow-y: auto; 
+    height: 100%;
+    width: 75%;
+    border-left: 1px solid rgba(0, 0, 0, .08);
+    overflow-y: auto;
+    
+} 
+
+
+
+.chat-nav{
+
+    padding: 10px 16px 10px 15px;
+    margin: 0;
+    height: 60px;
+    width: 100%;
+    
+    z-index: 1000;
+    
+}
+
+.contact-list{
+    height: 700px;
+
+}
+
+.nav-name , .txt-alert, .contact-name{
+    padding: 0 !important;
+    cursor: pointer;
+}
+
+
+.nav-name-contact , .txt-alert-contact, .contact-name-font {
+    font-weight: 700;
+    font-size: 100%;
+    padding: 5px;
+    padding-bottom: 0;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #000;
+    display: block;
+    text-transform: capitalize;
+}
+
+
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+
+.contact-lastmess , .icons , .contact-alert {
+    
+    padding: 0 5px;
+    font-size: 12px;
+    color: #93918f;
+    
+}
+
+
+
+
+
+.chat {
+    background: url(../img/mine.jpg) repeat ;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow-y: auto;
+    height: calc(100% - 120px);
+    
+}
+
+.chat-reply{
+    height: 60px;
+}
+
+.emoji , .audiorec , .sendicon , .icon{
+    text-align: right;
+    padding: 5px;
+    color: #93918f;
+    cursor: pointer;
+}
+
+
+.message-body {
+    margin: 10px ;
+    padding: 0 !important;
+    width: auto;
+    height: auto;
+}
+
+.message-main-received {
+    max-width: 60%;
+}
+
+.received {
+    width: auto !important;
+    padding: 4px 10px 7px !important;
+    border-radius: 10px 10px 10px 0;
+    background: #ffffff;
+    font-size: 12px;
+    text-shadow: 0 1px 1px rgb(0 0 0 / 20%);
+    word-wrap: break-word;
+    display: inline-block;
+}
+
+
+.message-main-sent {
+    padding: 3px 20px !important;
+    margin-left: 40% !important;
+    max-width: 60%;
+}
+
+
+.sent {
+    float: right;
+    width: auto !important;
+    background: #dcf8c6;
+    border-radius: 10px 10px 0 10px;
+    padding: 4px 10px 7px !important;
+    font-size: 12px;
+    text-shadow: 0 1px 1px rgb(0 0 0 / 20%);
+    display: inline-block;
+    word-wrap: break-word;
+}
+
+.message-text {
+    margin: 0 !important;
+    padding: 5px !important;
+    word-wrap: break-word;
+    font-weight: 200;
+    font-size: 14px;
+    padding-bottom: 0 !important;
+}
+
+
+.message-time {
+    margin: 0 !important;
+    margin-left: 50px !important;
+    font-size: 12px;
+    text-align: right;
+    color: #9a9a9a;
+}
+
+
+.pull-right {
+    float: right;
+}

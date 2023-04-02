@@ -10,6 +10,145 @@
     <title>Boolzapp</title>
 </head>
 <body>
+    <div id="app" class="wrapper ">
+        <div class="container box-chat bg-white">
+            <div class="d-flex w-100 h-100">
+                <div class="left d-flex flex-column ">
+                    <div class="left-content">
+                        <div class="d-flex user-nav ">
+                            <div class="user-avatar">
+                                <div class="user-icon ">
+                                    <img src="./img/avatar_1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="nav-name">
+                                <a class="nav-name-contact text-capitalize">mimmo</a>
+                            </div>
+                            <div class="icon d-flex w-100 justify-content-end">
+                                <div class=" m-1">
+                                    <i class="fa-solid fa-circle-notch"></i>
+                                </div>
+                                <div class=" m-1 ">
+                                    <i class="fa-solid fa-message"></i>
+                                </div>
+                                <div class=" m-1 ">
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="desktop-alert ">
+                        <div class="d-flex p-2 ">
+                            <div class="alert-icon text-center fs-4 bg-white">
+                                
+                                <i class="fa-solid fa-bell-slash"></i>
+                                
+                            </div>
+                            <div class="txt-alert">
+                                <a class="txt-alert-contact">Ricevi notifiche di nuovi messaggi</a>
+                                <span class="contact-alert">Attiva notifiche desktop</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="searchBox-inner mt-0">
+                        <div class="form-group">
+                            <input id="searchText" type="text" class="form-control" name="searchText" placeholder="Search">
+                        </div>
+                    </div>
+
+                <!-- da qui devo usare un ciclo v-for  -->
+                    <div v-for="(contact,id) in contacts" :key="contact.id" id="contactList" class="contact-list bg-white overflow-y-auto">
+                        <div @click="" class="d-flex align-items-center justify-content-between bg-white border-top h-100 ">
+                            <div class="user-avatar">
+                                <div class="user-icon ">
+                                    <img :src='(contacts[id].avatar)' alt="">
+                                </div>
+                            </div>
+                            <div class="contact-name d-flex flex-column align-items-start w-100 align-content-start  pb-3 overflow-hidden">
+                                <a class="contact-name-font">{{contacts[id].name}}</a>
+                                <span class="contact-lastmess text-nowrap">ultimo messaggio</span>
+                            </div>
+                            <div class="icons d-flex w-100 justify-content-end">
+                                <div class="m-1">
+                                    <span class="contact-lastmess">18:34</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div> 
+                <div class="chatboard d-flex flex-column align-items-between border-start ">
+                    <div class="d-flex align-items-center chat-nav">
+                        <div class="user-avatar me-4">
+                            <div class="user-icon ">
+                                <img :src='' alt="">
+                            </div>
+                            
+                        </div>
+                        <div class=" nav-name">
+                                <a class="nav-name-contact p-0">alfredo</a>
+                                <span class="contact-status">Online</span>
+                        </div>
+                        <div class="d-flex w-100 h-100 justify-content-end">
+                            <div class="icon  m-1">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                            <div class="icon m-1 ">
+                                <i class="fa-solid fa-paperclip"></i>
+                            </div>
+                            <div class="icon m-1 ">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-for="" class="chat d-flex flex-column m-0">
+                        <div class="row message-body">
+                            <div class="col-sm-12 message-main-sent">
+                                <div class="sent">
+                                    <div class="message-text"> 
+                                        <span></span>
+                                    </div> 
+                                    <span class="message-time pull-right">08:30</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="row  message-body">
+                            <div class="col-sm-12 message-main-sent">
+                                <div class="sent">
+                                    <div class="message-text"> 
+                                        <span>{{contacts[0].messages[1].message}}</span>
+                                    </div> 
+                                    <span class="message-time pull-right">08:31</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row message-body">
+                            <div class="col-sm-12 message-main-received">
+                                <div class="received">
+                                    <div class="message-text">{{contacts[0].messages[2].message}}</div>
+                                    <span class="message-time pull-right"> 09:40 </span>
+                                </div>
+                            </div>
+                        </div> -->
+                        
+                    </div>
+                    <div class="chat-reply d-flex align-items-center frame-bg m-0">
+                        <div class="emoji px-3"><i class="fa-regular fa-face-smile"></i></div>
+                        <div class="w-100">
+                            <input id="sendMessage" type="text" class="form-control" name="sendMessage" placeholder="Scrivi un messaggio">
+                        </div>
+                        <div class="audiorec px-3"><i class="fa-solid fa-microphone"></i></div>
+                        <div class="sendicon pe-3"><i class="fa-solid fa-paper-plane"></i></div>
+                    </div>
+                </div>    
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script type="text/javascript" src="./js/utility.js"></script>
