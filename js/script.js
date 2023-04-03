@@ -208,14 +208,55 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
+            currentId: 1,
+            newMessage: ''
+        
         }
     },
     methods:{
+        idSelector(id){
+            this.currentId = id - 1 ;
+            console.log(currentId);
+            
+        },
+        addMessage(){
 
+
+
+
+            
+        }
+
+
+
+        
+        
     }
 }).mount('#app');
 
 
 
 
+
+
+
+
+
+            // if(this.newMessage === ''){
+            //     // this.error= true
+
+            //     console.log('elem non valido');
+            //     return 
+            // } 
+            
+        //     const newProduct = {
+        //         date: '10/01/2020 15:30:55',
+        //         message: 'input',
+        //         status: 'sent'
+        //     }
+        //     if ((this.message) != '') this.contacts[currentId].messages.push(newProduct)
+            
+        //     // this.error = false
+        //     this.newMessage = '';
+        // }

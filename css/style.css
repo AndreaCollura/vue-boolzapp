@@ -131,7 +131,7 @@ body {
     height: 100%;
     width: 75%;
     border-left: 1px solid rgba(0, 0, 0, .08);
-    overflow-y: auto;
+    
     
 } 
 
@@ -221,6 +221,8 @@ a {
 
 .message-main-received {
     max-width: 60%;
+    display: flex;
+    justify-content: start;
 }
 
 .received {
@@ -239,6 +241,8 @@ a {
     padding: 3px 20px !important;
     margin-left: 40% !important;
     max-width: 60%;
+    display: flex;
+    justify-content: end;
 }
 
 
