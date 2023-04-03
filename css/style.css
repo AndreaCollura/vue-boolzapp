@@ -149,7 +149,7 @@ body {
 }
 
 .contact-list{
-    height: 700px;
+    height: calc(100% - 187px);
 
 }
 
@@ -188,7 +188,9 @@ a {
 }
 
 
-
+.contact-height{
+    height: 60px;
+}
 
 
 .chat {

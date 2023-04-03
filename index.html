@@ -58,25 +58,25 @@
                     </div>
 
                 <!-- da qui devo usare un ciclo v-for  -->
-                    <div v-for="(contact,id) in contacts" :key="contact.id" id="contactList" class="contact-list bg-white overflow-y-auto" @click="idSelector(contact.id)">
-                        <div @click="" class="d-flex align-items-center justify-content-between bg-white border-top h-100 ">
-                            <div class="user-avatar">
-                                <div class="user-icon ">
-                                    <img :src='(contacts[id].avatar)' alt="">
+                    <div class="contact-list bg-white overflow-y-auto">
+                        <div class="contact-height d-flex align-items-center border-top" v-for="(contact,id) in contacts" :key="contact.id" @click="idSelector(contact.id)">
+                            <div class="d-flex align-items-center justify-content-between bg-white w-100">
+                                <div class="user-avatar">
+                                    <div class="user-icon ">
+                                        <img :src='(contacts[id].avatar)' alt="">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="contact-name d-flex flex-column align-items-start w-100 align-content-start  pb-3 overflow-hidden">
-                                <a class="contact-name-font">{{contacts[id].name}}</a>
-                                <span class="contact-lastmess text-nowrap">ultimo messaggio</span>
-                            </div>
-                            <div class="icons d-flex w-100 justify-content-end">
-                                <div class="m-1">
-                                    <span class="contact-lastmess">18:34</span>
+                                <div class="contact-name d-flex flex-column align-items-start w-100 align-content-start  pb-3   overflow-hidden">
+                                    <a class="contact-name-font">{{contacts[id].name}}</a>
+                                    <span class="contact-lastmess text-nowrap">ultimo messaggio</span>
+                                </div>
+                                <div class="icons d-flex w-100 justify-content-end">
+                                    <div class="m-1">
+                                        <span class="contact-lastmess">18:34</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        
-                        
                     </div>
                 </div> 
                 <div class="chatboard d-flex flex-column border-start g-0 ">
@@ -118,10 +118,10 @@
                     <div class="chat-reply d-flex align-items-center frame-bg py-2 m-0">
                         <div class="emoji px-3"><i class="fa-regular fa-face-smile"></i></div>
                         <div class="w-100">
-                            <input id="sendMessage" type="text" class="form-control" name="sendMessage" placeholder="Scrivi un messaggio">
+                            <input @keyup.enter="addMessage(currentId)" id="sendMessage" v-model="inputMess" type="text" class="form-control" name="sendMessage" placeholder="Scrivi un messaggio">
                         </div>
                         <div class="audiorec px-3"><i class="fa-solid fa-microphone"></i></div>
-                        <div @click="addMessage" class="sendicon pe-3"><i class="fa-solid fa-paper-plane"></i></div>
+                        <div @click="addMessage(currentId)" class="sendicon pe-3"><i class="fa-solid fa-paper-plane"></i></div>
                     </div>
                 </div>    
                 

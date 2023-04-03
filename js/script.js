@@ -210,25 +210,59 @@ createApp({
                 }
             ],
             currentId: 1,
-            newMessage: ''
+            inputMess:'',
+            
         
         }
     },
     methods:{
         idSelector(id){
             this.currentId = id - 1 ;
-            console.log(currentId);
+            // console.log(currentId);
             
         },
-        addMessage(){
-
-
-
-
+        addMessage(currentId){
             
-        }
+
+            const newMessage = {
+            
+                date: '10/01/2020 15:30:55',
+                message: this.inputMess,
+                status: 'sent'
+            };
+
+            if ((this.inputMess) != '')this.contacts[currentId].messages.push(newMessage);
+            
+            this.inputMess = '';
 
 
+
+            this.newAnswerGen(currentId);
+
+        },
+
+
+        
+
+        newAnswerGen(currentId){
+            setTimeout(() => {
+                const newAnswer = {
+            
+                date: '10/01/2020 15:30:55',
+                message: 'OK',
+                status: 'received'
+            };
+            console.log(this.contacts[currentId].messages);
+            // console.log(this.contacts);
+            this.contacts[currentId].messages.push(newAnswer);
+
+            }, 3000)
+            
+            
+        
+        },
+
+        
 
         
         
