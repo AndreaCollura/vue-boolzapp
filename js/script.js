@@ -278,15 +278,15 @@ createApp({
                 date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
                 message: 'OK',
                 status: 'received'
-                };
+            };
 
-                console.log(this.contacts[currentId].messages);
-                // console.log(this.contacts);
-                this.contacts[currentId].messages.push(newAnswer);
-
-                setTimeout(()=>{
+            console.log(this.contacts[currentId].messages);
+            // console.log(this.contacts);
+            this.contacts[currentId].messages.push(newAnswer);
+            
+            setTimeout(()=>{
                 this.typing = dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
-                },4000);
+            },4000);
 
             }, 3000)
         },
