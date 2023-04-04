@@ -126,7 +126,6 @@ body {
     color: var(--deskalert);
 }
 
-
 .chatboard {
     padding: 0 !important;
     margin: 0 !important;
@@ -136,7 +135,7 @@ body {
     border-left: 1px solid rgba(0, 0, 0, .08);
     
     
-} 
+}
 
 
 
@@ -188,6 +187,16 @@ a {
     font-size: 12px;
     color: #93918f;
     
+}
+
+
+.contact-status{
+    padding: 0px 5apx;
+    font-size: 12px;
+    color: #93918f;
+    width: 30px;
+    
+
 }
 
 

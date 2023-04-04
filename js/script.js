@@ -31,7 +31,7 @@ La struttura dell’array dei contatti potrebbe avere questa forma:
 
 
 
-
+const dt = luxon.DateTime;
 
 const {createApp} = Vue;
 
@@ -212,7 +212,9 @@ createApp({
             currentId: 0,
             inputMess:'',
             searchName: '',
+            typing: 'Online',
             
+
             
         
         }
@@ -228,7 +230,7 @@ createApp({
 
             const newMessage = {
             
-                date: '10/01/2020 15:30:55',
+                date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
                 message: this.inputMess,
                 status: 'sent'
             };
@@ -266,16 +268,26 @@ createApp({
         
 
         newAnswerGen(currentId){
+
+            this.typing = 'Sta scrivendo...';
+
             setTimeout(() => {
+                this.typing = 'Online';
                 const newAnswer = {
-            
-                date: '10/01/2020 15:30:55',
+        
+                date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
                 message: 'OK',
                 status: 'received'
-            };
-            console.log(this.contacts[currentId].messages);
-            // console.log(this.contacts);
-            this.contacts[currentId].messages.push(newAnswer);
+                };
+
+                console.log(this.contacts[currentId].messages);
+                // console.log(this.contacts);
+                this.contacts[currentId].messages.push(newAnswer);
+
+                setTimeout(()=>{
+                this.typing = dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
+                },4000);
+
             }, 3000)
         },
     },
@@ -342,7 +354,7 @@ createApp({
 
 
 
-     /*    searchResult() {
+    /*    searchResult() {
             let tempContacts = this.contacts.name
             console.log(tempContacts);
             
