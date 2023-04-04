@@ -68,11 +68,11 @@
                                 </div>
                                 <div class="contact-name d-flex flex-column align-items-start w-100 align-content-start  pb-3   overflow-hidden">
                                     <a class="contact-name-font">{{contacts[id].name}}</a>
-                                    <span class="contact-lastmess text-nowrap">ultimo messaggio</span>
+                                    <span class="contact-lastmess text-nowrap">{{contact?.messages[contact.messages.length-1].message || ''}}</span>
                                 </div>
                                 <div class="icons d-flex w-100 justify-content-end">
                                     <div class="m-1">
-                                        <span class="contact-lastmess">18:34</span>
+                                        <span class="contact-lastmess">{{contact?.messages[contact.messages.length-1].date || ''}}</span>
                                     </div>
                                 </div>
                             </div>
