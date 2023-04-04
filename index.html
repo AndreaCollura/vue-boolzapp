@@ -53,14 +53,14 @@
                     </div>
                     <div class="searchBox-inner mt-0">
                         <div class="form-group">
-                            <input id="searchText" type="text" class="form-control" name="searchText" placeholder="Search">
+                            <input id="searchText" @keyup="searchResult" type="text" class="form-control" name="searchText" placeholder="Search" v-model.trim="searchName">
                         </div>
                     </div>
 
                 <!-- da qui devo usare un ciclo v-for  -->
                     <div class="contact-list bg-white overflow-y-auto">
-                        <div class="contact-height d-flex align-items-center border-top" v-for="(contact,id) in contacts" :key="contact.id" @click="idSelector(contact.id)">
-                            <div class="d-flex align-items-center justify-content-between bg-white w-100">
+                        <div class="contact-height d-flex align-items-center border-top " v-for="(contact,id) in contacts" :key="contact.id" :class="{'d-none': !contact.visible, 'active' : id === this.currentId}" @click="idSelector(contact.id)">
+                            <div class="d-flex align-items-center justify-content-between w-100">
                                 <div class="user-avatar">
                                     <div class="user-icon ">
                                         <img :src='(contacts[id].avatar)' alt="">
@@ -118,7 +118,7 @@
                     <div class="chat-reply d-flex align-items-center frame-bg py-2 m-0">
                         <div class="emoji px-3"><i class="fa-regular fa-face-smile"></i></div>
                         <div class="w-100">
-                            <input @keyup.enter="addMessage(currentId)" id="sendMessage" v-model="inputMess" type="text" class="form-control" name="sendMessage" placeholder="Scrivi un messaggio">
+                            <input @keyup.enter="addMessage(currentId)" id="sendMessage" v-model.trim="inputMess" type="text" class="form-control" name="sendMessage" placeholder="Scrivi un messaggio">
                         </div>
                         <div class="audiorec px-3"><i class="fa-solid fa-microphone"></i></div>
                         <div @click="addMessage(currentId)" class="sendicon pe-3"><i class="fa-solid fa-paper-plane"></i></div>

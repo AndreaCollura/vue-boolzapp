@@ -209,8 +209,10 @@ createApp({
                     ],
                 }
             ],
-            currentId: 1,
+            currentId: 0,
             inputMess:'',
+            searchName: '',
+            
             
         
         }
@@ -238,9 +240,28 @@ createApp({
 
 
             this.newAnswerGen(currentId);
+            
 
         },
 
+
+        searchResult() {
+
+            console.log(this.searchName);
+
+            this.contacts.forEach((contact) => {
+                if(!contact.name.toLowerCase().includes(this.searchName.toLowerCase())){
+                    contact.visible = false;
+                } else {
+                    contact.visible = true;
+                }
+            })
+            
+        
+        },
+
+
+        
 
         
 
@@ -255,24 +276,44 @@ createApp({
             console.log(this.contacts[currentId].messages);
             // console.log(this.contacts);
             this.contacts[currentId].messages.push(newAnswer);
-
             }, 3000)
-            
-            
-        
         },
+    },
+    computed: {
 
         
-
         
         
-    }
+    },
 }).mount('#app');
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// console.log(this.filteredContacts);
 
 
 
@@ -294,3 +335,50 @@ createApp({
         //     // this.error = false
         //     this.newMessage = '';
         // }
+
+
+
+
+
+
+
+     /*    searchResult() {
+            let tempContacts = this.contacts.name
+            console.log(tempContacts);
+            
+            
+        
+        },
+
+ */
+
+
+
+
+        // searchResult() {
+        //     let tempContacts = this.contacts.name
+        //     console.log(tempContacts);
+        //     if (this.searchName != '' && this.searchName) {
+        //         tempContacts = this.tempContacts.filter((contact) => {
+        //         return contact.name.toUpperCase().includes(this.searchContacts.toUpperCase())
+        //         })
+                
+        //     }
+        //     return tempContacts
+            
+        // }
+
+
+
+
+    /*     filteredContacts: function(currentId){
+
+            console.log(this.searchName);
+
+            this.searchName.toUpperCase();
+            
+            return this.contacts.filter((contact) => {
+                return contact.name.match(this.searchName)
+            });
+        
+        } */
