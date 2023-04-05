@@ -294,3 +294,11 @@ a {
 .pull-right {
     float: right;
 }
+
+
+.emojibox{
+    position: absolute;
+    bottom:40px;
+    left: 20px;
+    
+}

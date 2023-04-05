@@ -29,7 +29,7 @@ La struttura dell’array dei contatti potrebbe avere questa forma:
 
 
 
-
+import Picker from './emoji-picker.js';
 
 const dt = luxon.DateTime;
 
@@ -213,6 +213,7 @@ createApp({
             inputMess:'',
             searchName: '',
             typing: 'Online',
+            showEmoji: false
             
 
             
@@ -238,12 +239,18 @@ createApp({
             if ((this.inputMess) != '')this.contacts[currentId].messages.push(newMessage);
             
             this.inputMess = '';
+            this.showEmoji = false;
 
 
 
             this.newAnswerGen(currentId);
             
 
+        },
+
+
+        onSelectEmoji(emoji){
+            this.inputMess += emoji.i;
         },
 
 
@@ -297,7 +304,7 @@ createApp({
         
         
     },
-}).mount('#app');
+}).component('Picker', Picker).mount('#app');
 
 
 
